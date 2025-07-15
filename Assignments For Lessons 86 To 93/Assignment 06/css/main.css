@@ -1,0 +1,42 @@
+form {
+    width: fit-content;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.results {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px); /* 3 أعمدة بعرض 200px لكل عمود */
+    gap: 20px; /* مسافة بين الأعمدة والصفوف */
+    justify-content: center; /* نخلي الشبكة تتوسّط الصفحة */
+}
+
+.box {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    word-break: break-word;         /* 👍 يكسر الكلمة الطويلة */
+    overflow-wrap: break-word;      /* 👍 دعم إضافي */
+}

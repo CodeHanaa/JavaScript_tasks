@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Card Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    form {
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+    }
+
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .cards-container {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card {
+      width: 200px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      word-break: break-word;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="card-form">
+    <input type="text" id="username" class="input" placeholder="User Name" required />
+    <input type="url" id="image-url" class="input" placeholder="Image URL" required />
+    <input type="number" id="card-count" class="input" placeholder="Number of Cards" min="1" required />
+    <input type="submit" value="Create Cards" />
+  </form>
+
+  <div class="cards-container" id="cards-container"></div>
+
+  <script>
+    // نجيب العناصر من الصفحة
+    const form = document.getElementById('card-form');
+    const cardsContainer = document.getElementById('cards-container');
+
+    // لما المستخدم يضغط "Create Cards"
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // يمنع الـ Refresh
+
+      // ناخد القيم من الحقول
+      const userName = document.getElementById('username').value.trim();
+      const imageUrl = document.getElementById('image-url').value.trim();
+      const count = parseInt(document.getElementById('card-count').value);
+
+      // تأكد إن القيم صالحة
+      if (!userName || !imageUrl || isNaN(count) || count <= 0) {
+        alert("من فضلك أدخل كل البيانات بشكل صحيح");
+        return;
+      }
+
+      // مسح الكروت القديمة
+      cardsContainer.innerHTML = '';
+
+      // إنشاء الكروت الجديدة
+      for (let i = 1; i <= count; i++) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.id = `card-${i}`;
+
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = "User Image";
+
+        const name = document.createElement('h3');
+        name.textContent = userName;
+
+        const number = document.createElement('p');
+        number.textContent = `Card #${i}`;
+
+        card.appendChild(img);
+        card.appendChild(name);
+        card.appendChild(number);
+
+        cardsContainer.appendChild(card);
+      }
+
+      // إعادة ضبط الفورم بعد الإنشاء
+      form.reset();
+    });
+  </script>
+
+</body>
+</html> -->
+
+
