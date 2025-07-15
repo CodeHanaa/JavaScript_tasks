@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // window.onload = function () {
+    //     // نحصل على كل العناصر a
+    //     const links = document.querySelectorAll("a");
+
+    //     // نبحث فيهم عن العنصر اللي فيه class "open" والنص "Elzero"
+    //     links.forEach(link => {
+    //     if (link.classList.contains("open") && link.textContent === "Elzero") {
+    //         window.open(link.href);
+    //     }
+    //     });
+    // };
+
+    window.onload = function() {
+        const links = document.querySelectorAll("a");
+        links.forEach(link => {
+            if(link.classList.contains("linked") && link.textContent === "Elzero") {
+                window.open(link.href);
+            }
+        })
+    }
+</script>
+
+</head>
+<body>
+    <a class="open" href="https://google.com">Google</a>
+    <a class="open" href="https://elzero.org">Elzero</a>
+    <a class="not" href="https://facebook.com">Facebook</a>
+    <a class="linked" href="https://linkedin.com">Elzero</a>
+    <script src="main.js"></script>
+</body>
+</html>

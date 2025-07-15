@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Elzero Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+    }
+    header, footer {
+      background-color: #2ecc71;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    nav h2 {
+      color: #2ecc71;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      cursor: pointer;
+      color: #555;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 20px;
+    }
+    .box {
+      background-color: white;
+      text-align: center;
+      padding: 40px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .box h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+    footer {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>Hanaa Coding Academy</h2>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Service</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <div class="container" id="product-container"></div>
+
+  <footer>Copyright 2024</footer>
+
+  <script>
+    const container = document.getElementById("product-container");
+
+    for (let i = 1; i <= 15; i++) {
+      const box = document.createElement("div");
+      box.className = "box";
+
+      const number = document.createElement("h3");
+      number.textContent = i;
+
+      const label = document.createElement("p");
+      label.textContent = "Product";
+
+      box.appendChild(number);
+      box.appendChild(label);
+      container.appendChild(box);
+    }
+  </script>
+
+</body>
+</html>
