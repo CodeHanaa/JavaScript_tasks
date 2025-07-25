@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with SessionStorage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 40px;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      width: 350px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="my-form">
+    <label for="name">الاسم:</label>
+    <input type="text" id="name" placeholder="اكتب اسمك">
+
+    <label for="email">البريد الإلكتروني:</label>
+    <input type="email" id="email" placeholder="example@mail.com">
+
+    <label for="age">العمر:</label>
+    <input type="number" id="age" placeholder="اكتب عمرك">
+
+    <label for="options">اختر خيارًا:</label>
+    <select id="options">
+      <option value="1">الخيار 1</option>
+      <option value="2">الخيار 2</option>
+      <option value="3">الخيار 3</option>
+      <option value="4">الخيار 4</option>
+      <option value="5">الخيار 5</option>
+    </select>
+
+    <button type="submit">إرسال</button>
+  </form>
+
+  <script>
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const ageInput = document.getElementById("age");
+    const optionsSelect = document.getElementById("options");
+    const form = document.getElementById("my-form");
+
+    // استرجاع القيم من sessionStorage عند فتح أو عمل Reload
+    window.addEventListener("load", () => {
+      nameInput.value = sessionStorage.getItem("name") || "";
+      emailInput.value = sessionStorage.getItem("email") || "";
+      ageInput.value = sessionStorage.getItem("age") || "";
+      optionsSelect.value = sessionStorage.getItem("option") || "1";
+    });
+
+    // حفظ القيم في sessionStorage عند التغيير
+    nameInput.addEventListener("input", () => {
+      sessionStorage.setItem("name", nameInput.value);
+    });
+
+    emailInput.addEventListener("input", () => {
+      sessionStorage.setItem("email", emailInput.value);
+    });
+
+    ageInput.addEventListener("input", () => {
+      sessionStorage.setItem("age", ageInput.value);
+    });
+
+    optionsSelect.addEventListener("change", () => {
+      sessionStorage.setItem("option", optionsSelect.value);
+    });
+
+    // منع إعادة تحميل الصفحة عند الإرسال (اختياري هنا)
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("تم إرسال البيانات بنجاح!");
+    });
+  </script>
+</body>
+</html>

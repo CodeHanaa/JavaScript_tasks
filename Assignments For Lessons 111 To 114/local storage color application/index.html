@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage color application</title>
+    <style>
+       ul {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        background-color: #ccc;
+        margin: 20px auto;
+        padding: 20px;
+        }
+        ul li {
+            list-style: none;
+            height: 90px;
+            cursor: pointer;
+        }
+
+        ul li[data-color="red"] {
+            background-color: red;
+        }
+        ul li[data-color="green"] {
+            background-color: green;
+        }
+        ul li[data-color="blue"] {
+            background-color: blue;
+        }
+        ul li[data-color="black"] {
+            background-color: black;
+        }
+        div {
+            width: 500px;
+            height: 300px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active" data-color="red"></li>
+        <li data-color="green"></li>
+        <li data-color="blue"></li>
+        <li data-color="black"></li>
+    </ul>
+    <div class="experiment"></div>
+    <script src="main.js"></script>
+</body>
+</html> 
+
+
+
