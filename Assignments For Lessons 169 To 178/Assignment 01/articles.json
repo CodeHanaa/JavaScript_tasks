@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "author": "John Doe",
+    "section": "JavaScript",
+    "title": "Learn JavaScript",
+    "content": "JavaScript is the most popular programming language in the world."
+  },
+  {
+    "id": 2,
+    "author": "Jane Smith",
+    "section": "CSS",
+    "title": "Mastering CSS",
+    "content": "CSS allows you to style websites beautifully and responsively."
+  },
+  {
+    "id": 3,
+    "author": "Ali Hassan",
+    "section": "HTML",
+    "title": "HTML Basics",
+    "content": "HTML is the backbone of any web page structure."
+  },
+  {
+    "id": 4,
+    "author": "Mona Adel",
+    "section": "React",
+    "title": "Getting Started with React",
+    "content": "React is a powerful library for building user interfaces."
+  },
+  {
+    "id": 5,
+    "author": "Ahmed Zaki",
+    "section": "Node.js",
+    "title": "Server-side with Node.js",
+    "content": "Node.js allows JavaScript to run on the server."
+  }
+]
